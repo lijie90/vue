@@ -10,7 +10,6 @@
     <span>{{totalPrice}}</span>
   </div>
 </template>
-
 <script>
 export default {
   name: "HelloWorld",
@@ -23,7 +22,7 @@ export default {
   },
   computed: {
     //计算属性，总价随数量和价格的变化而变化（实质就是监听了数量和单价的变化）
-    //初始化的时候回执行一次，在此不能操作dom元素，因为dom元素是在mounted函数后才能执行操作，即是挂载完成后
+    //初始化的时候回执行一次，在此不要操作dom元素，因为dom元素是在mounted函数后才能执行操作，即是挂载完成后
     totalPrice: function() {
       console.log("变化");
       return parseInt(this.num) * parseInt(this.price);
