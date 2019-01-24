@@ -1,10 +1,10 @@
 # vue
 
-> A Vue.js project
+> vue 小 demo,记录小知识点
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
@@ -27,4 +27,10 @@ npm run e2e
 npm test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# 目录
+
+# watch 和 computed，监听属性变化
+
+# 路由和子路由
+
+# 组件通信和 vuex 状态管理
