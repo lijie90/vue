@@ -27,10 +27,10 @@ npm run e2e
 npm test
 ```
 
-# 目录
+目录
 
-# watch 和 computed，监听属性变化
+watch 和 computed，监听属性变化
 
-# 路由和子路由
+路由和子路由
 
-# 组件通信和 vuex 状态管理
+组件通信和 vuex 状态管理
