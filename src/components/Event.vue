@@ -19,7 +19,7 @@ export default {
   methods: {
     greet: function(id, event) {
       alert(JSON.stringify(id));
-      alert(JSON.stringify(event.target.key));
+      // alert(JSON.stringify(event.target.key));
     }
   }
 };

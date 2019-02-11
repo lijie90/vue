@@ -29,7 +29,7 @@ npm test
 
 目录
 
-watch 和 computed，监听属性变化
+watch 和 computed，监听属性变化 =>HelloWorld 组件
 
 路由和子路由
 
