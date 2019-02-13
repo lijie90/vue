@@ -3,6 +3,10 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import RoutTestFirst from '@/components/RoutTestFirst'
 import Event from '@/components/Event'
+import Tree from '@/components/Tree'
+import TestTree from '@/components/TestTree'
+
+
 
 
 
@@ -23,6 +27,15 @@ export default new Router({
       path: '/event',
       name: 'Event',
       component: Event
+    },
+    {
+      path: '/tree',
+      name: 'tree',
+      component: Tree
+    }, {
+      path: '/testTree',
+      name: 'TestTree',
+      component: TestTree
     }
   ]
 })

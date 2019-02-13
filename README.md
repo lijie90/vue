@@ -33,4 +33,4 @@ watch 和 computed，监听属性变化 =>HelloWorld 组件
 
 路由和子路由
 
-组件通信和 vuex 状态管理
+组件通信(HelloWorld 组件)和 vuex 状态管理
