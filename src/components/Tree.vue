@@ -37,13 +37,10 @@ export default {
   },
   methods: {
     changeStatus(index) {
-      // console.log(this.scopesDefault[index]);
       if (this.scopesDefault[index] == true) {
         this.$set(this.scopesDefault, index, false);
       } else {
-        // console.log(index);
         this.$set(this.scopesDefault, index, this.scopes[index]);
-        // console.log(this.scopes[index]);
       }
     },
     scope() {
@@ -51,12 +48,10 @@ export default {
         this.scopesDefault[index] = false;
         if ("children" in item) {
           this.scopes[index] = true;
-          // console.log(item, index);
         } else {
           this.scopes[index] = false;
         }
       });
-      // console.log(this.scopesDefault);
     }
   },
 

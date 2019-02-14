@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>引用Tree</h1>
     <ul>
-      <Tree :isOpen="isOpen" :treeData="treeData"></Tree>
+      <Tree @showCityName="updateOpen" :isOpen="isOpen" :treeData="treeData"></Tree>
     </ul>
   </div>
 </template>
@@ -88,6 +88,7 @@ export default {
   },
 
   methods: {
+    updateOpen: function(data) {},
     greet: function(id, event) {
       alert(JSON.stringify(id));
       // alert(JSON.stringify(event.target.key));
