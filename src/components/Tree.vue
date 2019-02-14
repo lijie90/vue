@@ -2,13 +2,17 @@
   <div class="hello">
     <!-- <h1>Tree</h1> -->
     <!-- <button @click="greet">事件触发</button> -->
-    <li v-for="item in treeData" :key="item.id" :style="{marginLeft:item.increment*12+'px'}">
-      <div @click.stop="greet(item.id,$event)">
-        <span v-if="item.isParent">@{{item.title}}</span>
-        <span v-if="!item.isParent">#{{item.title}}</span>
+    <li
+      v-for="(item,index) in treeData"
+      :key="item.id"
+      :style="{marginLeft:item.increment*12+'px'}"
+    >
+      <div @click.stop="changeStatus(index)">
+        <span v-if="item.isParent">●{{item.title}}</span>
+        <span v-if="!item.isParent">○{{item.title}}</span>
       </div>
-      <ul v-show="isOpen">
-        <Tree :treeData="item.children"></Tree>
+      <ul>
+        <Tree v-if="scopesDefault[index]" :treeData="item.children"></Tree>
       </ul>
     </li>
   </div>
@@ -19,21 +23,45 @@ export default {
   // props: ["indexObj"],
   data() {
     return {
-      indexObj: [{ id: "1", message: "Foo" }, { id: "2", message: "Bar" }]
+      indexObj: [{ id: "1", message: "Foo" }, { id: "2", message: "Bar" }],
+      isOpen: false,
+      scopesDefault: [],
+      scopes: []
     };
   },
   props: {
     treeData: Array,
-    default: [],
-    isOpen: Boolean,
-    default: false
+    default: []
+    // isOpen: Boolean,
+    // default: false
   },
   methods: {
-    greet: function(id, event) {
-      // alert(JSON.stringify(id));
-      this.isOpen = !this.isOpen;
-      // alert(JSON.stringify(event.target.key));
+    changeStatus(index) {
+      // console.log(this.scopesDefault[index]);
+      if (this.scopesDefault[index] == true) {
+        this.$set(this.scopesDefault, index, false);
+      } else {
+        // console.log(index);
+        this.$set(this.scopesDefault, index, this.scopes[index]);
+        // console.log(this.scopes[index]);
+      }
+    },
+    scope() {
+      this.treeData.forEach((item, index) => {
+        this.scopesDefault[index] = false;
+        if ("children" in item) {
+          this.scopes[index] = true;
+          // console.log(item, index);
+        } else {
+          this.scopes[index] = false;
+        }
+      });
+      // console.log(this.scopesDefault);
     }
+  },
+
+  created() {
+    this.scope();
   }
 };
 </script>

@@ -47,9 +47,29 @@ export default {
         },
         {
           id: 2,
+          title: "谢逊",
           increment: 0,
-          isParent: false,
-          title: "谢逊"
+          openShow: false,
+          isParent: true,
+          children: [
+            {
+              id: 21,
+              increment: 1,
+              isParent: true,
+              openShow: false,
+              left: 12,
+              title: "谢小逊",
+              children: [
+                {
+                  id: 31,
+                  increment: 2,
+                  left: 12,
+                  title: "谢x逊",
+                  openShow: false
+                }
+              ]
+            }
+          ]
         },
         {
           id: 3,
