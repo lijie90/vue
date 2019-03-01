@@ -5,6 +5,8 @@ import RoutTestFirst from '@/components/RoutTestFirst'
 import Event from '@/components/Event'
 import Tree from '@/components/Tree'
 import TestTree from '@/components/TestTree'
+import RouterT from '@/components/RouterT'
+
 
 
 
@@ -36,6 +38,14 @@ export default new Router({
       path: '/testTree',
       name: 'TestTree',
       component: TestTree
+    },
+    {
+      path: '/routerT',
+      name: 'RouterT',
+      component: RouterT,
+      props: (route) => ({ query: route.query.q }), //将{query：''}这个对象作为属性传入到组件中
+      // props: true,//将/routerT/:query  query作为属性传入到组件中
     }
+    //RouterT
   ]
 })

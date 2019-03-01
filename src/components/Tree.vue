@@ -37,6 +37,7 @@ export default {
   },
   methods: {
     changeStatus(index) {
+      this.$emit("showCityName", index);
       if (this.scopesDefault[index] == true) {
         this.$set(this.scopesDefault, index, false);
       } else {

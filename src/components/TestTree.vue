@@ -88,7 +88,10 @@ export default {
   },
 
   methods: {
-    updateOpen: function(data) {},
+    updateOpen: function(data) {
+      console.log(data);
+      
+    },
     greet: function(id, event) {
       alert(JSON.stringify(id));
       // alert(JSON.stringify(event.target.key));
