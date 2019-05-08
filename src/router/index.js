@@ -35,7 +35,7 @@ export default new Router({
       name: 'tree',
       component: Tree
     }, {
-      path: '/testTree',
+      path: '/testTree',  
       name: 'TestTree',
       component: TestTree
     },
@@ -43,8 +43,9 @@ export default new Router({
       path: '/routerT',
       name: 'RouterT',
       component: RouterT,
-      props: (route) => ({ query: route.query.q }), //将{query：''}这个对象作为属性传入到组件中
-      // props: true,//将/routerT/:query  query作为属性传入到组件中
+      props: (route) => ({ query: route.query.q }), 
+      // props: true,
+      //将/routerT/:query  query作为属性传入到组件中
     }
     //RouterT
   ]

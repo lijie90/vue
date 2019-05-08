@@ -4,7 +4,7 @@
     <!-- <button @click="greet">事件触发</button> -->
     <p>{{$route.name}}</p>
     <p>{{$route.query.q}}</p>
-    <p>{{query.query}}</p>
+    <p>{{query}}</p>
   </div>
 </template>
 <script>

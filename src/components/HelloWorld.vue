@@ -2,13 +2,15 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <label for="num">数量</label>
-    <input type="text" v-model="num">
+    <input type="text" v-model="num" />
     <label for="price">单价</label>
-    <input type="text" v-model="price">
-    <hr>
+    <input type="text" v-model="price" />
+    <hr />
     <label for="totalPrice">总价:</label>
-    <span>{{totalPrice}}</span>
-    <hr>
+    <span>{{ totalPrice }}</span>
+    <span>vuex的状态</span>
+    <span></span>
+    <hr />
     <!-- 向组件传参，调用组件 -->
     <p>向组件传参，调用组件</p>
     <RoutTestSecond :indexObj="testObj"></RoutTestSecond>
@@ -16,6 +18,7 @@
 </template>
 <script>
 import RoutTestSecond from "@/components/RoutTestSecond";
+// import func from '../../vue-temp/vue-editor-bridge';
 export default {
   name: "HelloWorld",
   components: {
@@ -30,10 +33,17 @@ export default {
       testObj: [{ id: "1", message: "Foo" }, { id: "2", message: "Bar" }]
     };
   },
+  created:function(){
+   
+      console.log(this.$store.state.count);
+    
+  },
   computed: {
     //计算属性，总价随数量和价格的变化而变化（实质就是监听了数量和单价的变化）
     //初始化的时候回执行一次，在此不要操作dom元素，因为组件dom元素是在mounted函数后才挂载完成
+    
     totalPrice: function() {
+      
       console.log("变化");
       return parseInt(this.num) * parseInt(this.price);
     }
